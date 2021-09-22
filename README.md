@@ -1,2 +1,2 @@
 # freecodecamp
-These are my solutions to FreeCodeCamp Projects. 
+This is my code for FreeCodeCamp Projects. 
