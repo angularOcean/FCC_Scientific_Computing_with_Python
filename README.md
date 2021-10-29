@@ -3,6 +3,7 @@ This reposistory contains my code for freeCodeCamp's Scientific Computing with P
 Projects in this repository include an Arithmetic Formatter, a Time Calculator, a Budget App, a Polygon Area Calculator and a Probability Calculator.
 
 **Project Details:**
+
 Arithmetic Formatter: This program receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side.
 
 Time Calculator: This program can add a duration to a start time and return the result.
