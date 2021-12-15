@@ -1,8 +1,10 @@
-print("Time Calculator Project")
+#"Time Calculator Project" by HL
 import re
-import math
 
 def add_time(start, duration, week = None):
+    '''This function calculates the the end time given a start time and duration and optionally the day of the week the end time is on
+    Parameters: a string of the start time in 12 hour clock format HH:MM with an AM or PM formatted ending. a duration in hours and minutes, an optional argument for the day of the week
+    Returns: the ending time in 12 hour clock format and AM/PM for the end time along with how many days later it is and optionally a day of the week if the third argument is given   '''
     #print('Start', start, 'Duration', duration)
     new_time = None
     start2 = None
@@ -77,38 +79,6 @@ def add_time(start, duration, week = None):
     if newt1//24 >1:
         new_time = new_time + " (" + str(newt1//24)+ " days later)"
 
-
-
-
-
-
     print('The time is:', new_time)
     return new_time
 
-
-#add_time("3:30 PM", "2:12")
-#print('Expected', "5:42 PM" )
-
-#add_time("11:55 AM", "3:12")
-#print('Expected', "3:07 PM")
-
-#add_time("11:40 AM", "0:25")
-#print('Expected',"12:05 PM" )
-
-#add_time("11:59 PM", "24:05")
-#print('Expected',"12:04 AM (2 days later)")
-
-#add_time("5:01 AM", "0:00")
-#print('Expected',"5:01 AM" )
-
-#add_time("3:30 PM", "2:12", "Monday")
-#print('Expected', "5:42 PM, Monday")
-
-#add_time("2:59 AM", "24:00", "saturDay")
-#print('Expected',"2:59 AM, Sunday (next day)" )
-
-#add_time("11:59 PM", "24:05", "Wednesday")
-#print('Expected', "12:04 AM, Friday (2 days later)")
-
-#add_time("8:16 PM", "466:02", "tuesday")
-#print('Expected', "6:18 AM, Monday (20 days later)")

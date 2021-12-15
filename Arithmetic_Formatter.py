@@ -1,7 +1,11 @@
-print("Arithmetic Formatter Project")
+#"Arithmetic Formatter Project" by HL
 import re
-import sys
-def arithmetic_arranger(problem, x = False):
+
+def arithmetic_arranger(problem, varX = False):
+    '''This function takes a math problem
+    Parameters: a list of strings that are math problem, optionally a true/false boolean
+    Returns: a string representation of the math problem now vertically arranged as well as side by side,
+     if the second argument is set to true, the answer to the problems is also calculated and displayed'''
     formatter = None
     lineone = []
     linetwo = []
@@ -12,8 +16,8 @@ def arithmetic_arranger(problem, x = False):
     if len(problem) > 5:
         print("Error: Too many problems.")
         return "Error: Too many problems."
-    for i in problem:
-        isplit = re.split(' ', i)
+    for integer in problem:
+        isplit = re.split(' ', integer)
 
         if len(isplit[0]) > 4 or len(isplit[2]) > 4:
             print("Error: Numbers cannot be more than four digits.")
@@ -26,7 +30,7 @@ def arithmetic_arranger(problem, x = False):
         spaceone = ''
 
         if int(len(isplit[0])) < int(len(isplit[2])):
-            for i in range(int(len(isplit[2]))-int(len(isplit[0]))):
+            for integer in range(int(len(isplit[2]))-int(len(isplit[0]))):
                 spaceone = spaceone + ' '
             isplit[0] = spaceone + '  ' + isplit[0]
 
@@ -34,12 +38,12 @@ def arithmetic_arranger(problem, x = False):
             isplit[0] = '  ' + isplit[0]
 
         elif int(len(isplit[0])) > int(len(isplit[2])):
-            for i in range(int(len(isplit[0]))-int(len(isplit[2]))):
+            for integer in range(int(len(isplit[0]))-int(len(isplit[2]))):
                 spaceone = spaceone + ' '
             isplit[0] = '  ' + isplit[0]
             isplit[2] = spaceone + isplit[2]
 
-        for i in range(int(len(isplit[2])+2)):
+        for integer in range(int(len(isplit[2])+2)):
             linedash = linedash + '-'
 
         lineone.append(isplit[0])
@@ -57,7 +61,7 @@ def arithmetic_arranger(problem, x = False):
             print("Error: Numbers must only contain digits.")
             return "Error: Numbers must only contain digits."
 
-        if x is True:
+        if varX is True:
             output = None
 
             if isplit[1] == '+':
@@ -69,7 +73,7 @@ def arithmetic_arranger(problem, x = False):
             output = str(output)
             spacetwo = ''
             if int(len(output)) < int(len(linedash)):
-                for i in range(int(len(linedash))- int(len(output))):
+                for integer in range(int(len(linedash))- int(len(output))):
                     spacetwo = spacetwo + ' '
                 output = spacetwo + output
             linefour.append(output)
@@ -77,26 +81,11 @@ def arithmetic_arranger(problem, x = False):
     lineone.pop()
     linetwo.pop()
     linethree.pop()
-    if x is True:
+    if varX is True:
         linefour.pop()
         formatter = (' ').join(lineone) + '\n' + (' ').join(linetwo) + '\n' + (' ').join(linethree) + '\n' + (' ').join(linefour)
     else:
-       formatter = (' ').join(lineone) + '\n' + (' ').join(linetwo) + '\n' + (' ').join(linethree)
+        formatter = (' ').join(lineone) + '\n' + (' ').join(linetwo) + '\n' + (' ').join(linethree)
 
-    print(formatter)
     return formatter
 
-test1 = (["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])
-test2 = (["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"])
-test3 = (["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"])
-test4 = (["3 / 855", "3801 - 2", "45 + 43", "123 + 49"])
-test5 = (["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"])
-test6 = (["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"])
-test7 = (["32 - 698", "1 - 3801", "45 + 43", "123 + 49"])
-arithmetic_arranger(test1)
-arithmetic_arranger(test2)
-arithmetic_arranger(test3)
-arithmetic_arranger(test4)
-arithmetic_arranger(test5)
-arithmetic_arranger(test6)
-arithmetic_arranger(test7, True)
