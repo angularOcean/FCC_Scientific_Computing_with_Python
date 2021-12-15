@@ -2,7 +2,8 @@
 This repository contains my code for freeCodeCamp's Scientific Computing with Python certificate course's capstone projects.
 Projects in this repository include an Arithmetic Formatter, a Time Calculator, a Budget App, a Polygon Area Calculator and a Probability Calculator.
 
-**Project Details:**
+<u>**Project Details:**</u>
+
 This repository has the following files with descriptions below: Arithmetic_Formatter.py, Budget_App.py, Polygon_Area_Calculator.py, Probability_Calculator.py, and Time_Calculator.py
 
 Each file in this library is stand-alone and can be run by itself. 
